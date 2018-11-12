@@ -3,7 +3,8 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.math_real.all;
 library work;
-use work.sim_components.all;
+use work.common_pkg.all;
+use work.cordic_pkg.all;
 
 entity cordic is
   generic (

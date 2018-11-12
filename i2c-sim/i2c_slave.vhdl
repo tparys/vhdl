@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library work;
-use work.sim_components.all;
+use work.i2c_slave_pkg.all;
 
 entity i2c_slave is
   generic (

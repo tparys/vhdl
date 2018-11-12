@@ -2,7 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library work;
-use work.sim_components.all;
+use work.common_pkg.all;
+use work.cordic_pkg.all;
 
 -- Top Level Sim 
 entity testbench is
@@ -26,16 +27,18 @@ architecture sim of testbench is
 
 begin  -- architecture sim
 
-  cr1 : clockreset
+  c1 : clockreset
     generic map (
-      CLK_MHZ => 1)
+      FREQ_BASE => FREQ_MHZ,
+      FREQ_VALUE => 1)
     port map (
       rst => rst,
       clk => clk1mhz);
 
-  cr2 : clockreset
+  c2 : clock
     generic map (
-      CLK_MHZ => 25)
+      FREQ_BASE => FREQ_MHZ,
+      FREQ_VALUE => 25)
     port map (
       clk => clk25mhz);
 

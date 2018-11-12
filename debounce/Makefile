@@ -1,24 +1,10 @@
-VHDL_OBJS += sim_components.o
-VHDL_OBJS += clock.o
-VHDL_OBJS += clockreset.o
-VHDL_OBJS += debounce.o
-VHDL_OBJS += testbench.o
-VHDL_TOP = testbench
+# Testbench sources
+MODULE_SRC = debounce.vhdl testbench.vhdl
+MODULE_TOP = testbench
+MODULE_DEPS = modules/common
 SIM_LEN = 100us
 
-.phony: all
-
-all: $(VHDL_TOP)
-
-$(VHDL_TOP): $(VHDL_OBJS)
-	ghdl -e $@
-
-%.o: %.vhdl
-	ghdl -a $<
-
-clean:
-	rm -rf *.o *.cf *.vcd
-
-sim: $(VHDL_TOP) $(VHDL_OBJS)
-	./$(VHDL_TOP) --stop-time=$(SIM_LEN) --vcd=wave.vcd
-	gtkwave wave.vcd
+# Common ghdl build
+export WORK_DIR ?= $(PWD)
+export BUILD_DIR = $(PWD)/../build
+include $(BUILD_DIR)/build.mk

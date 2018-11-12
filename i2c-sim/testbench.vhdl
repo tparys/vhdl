@@ -1,8 +1,9 @@
 library ieee;
 use ieee.std_logic_1164.all;
 library work;
-use work.sim_components.all;
+use work.common_pkg.all;
 use work.i2c_sim.all;
+use work.i2c_slave_pkg.all;
 
 -- Top Level Sim 
 entity testbench is

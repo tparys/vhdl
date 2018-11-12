@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 library work;
 
-package sim_components is
+package common_pkg is
 
   -- Clock Time Bases
   constant FREQ_HZ  : time := 1000 ms;
@@ -40,4 +40,4 @@ package sim_components is
       );
   end component debounce;
 
-end package sim_components;
+end package common_pkg;

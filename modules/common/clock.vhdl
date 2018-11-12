@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 library work;
-use work.sim_components.all;
+use work.common_pkg.all;
 
 entity clock is
   generic (
