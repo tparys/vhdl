@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 use ieee.math_real.all;
 library work;
 use work.common_pkg.all;
-use work.cordic_pkg.all;
+use work.sine_pkg.all;
 
 entity cordic is
   generic (

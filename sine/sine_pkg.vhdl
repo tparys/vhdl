@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-package cordic_pkg is
+package sine_pkg is
 
   component cordic is
     generic (
@@ -47,4 +47,4 @@ package cordic_pkg is
       data_out : out std_logic);
   end component dac;
 
-end package cordic_pkg;
+end package sine_pkg;

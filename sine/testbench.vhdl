@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library work;
 use work.common_pkg.all;
-use work.cordic_pkg.all;
+use work.sine_pkg.all;
 
 -- Top Level Sim 
 entity testbench is
